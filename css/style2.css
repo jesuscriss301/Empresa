@@ -1,0 +1,37 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.cabecera{
+	border: 1.5px solid blue;
+	height: 85px;
+	display:flex;
+	align-items: center;
+	width: 100%;
+}
+.nav{
+	width: 90%;
+	display: flex;
+	align-items: center;
+	height: 80px;
+	justify-content: space-between;
+	margin: 0 auto;
+
+}
+.logo{
+	align-items: center;
+	display: flex;
+	width: 80px;
+}
+.foto{width: 100%}
+.botones{
+	display: flex;
+	justify-content: space-around;
+	width: 320px;
+	list-style: none;
+}
+.letra1{
+	color:#424242;
+	text-decoration: none;
+	font-family: 'Pacico', cursive;
+}
