@@ -3,7 +3,7 @@
 	padding: 0;
 }
 .cabecera{
-	border: 1.5px solid blue;
+	border: 1.5px solid #F5B853;
 	height: 85px;
 	display:flex;
 	align-items: center;
@@ -30,8 +30,60 @@
 	width: 320px;
 	list-style: none;
 }
+.bloque{
+	border: 1.5px solid #F5B853;
+	width: 80px;
+	display:flex;
+	align-items: center;
+	width: 100%;
+	display: block
+
+
+}
 .letra1{
 	color:#424242;
 	text-decoration: none;
 	font-family: 'Pacico', cursive;
+}
+.letra2{
+	color:#424242;
+	width: 100px
+	text-decoration: none;
+	font-family: 'Pacico', cursive;
+}
+.shared-panel{
+	overflow: auto;
+}
+.shared-panel span{
+	margin: 10px 0;
+	font-size: 16px;
+	font-weight: 600;
+
+}
+.shared {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin: 5px 0;
+	padding: 0;
+	background: url("../images/shared.png") no-repeat;
+	float: left;
+	margin-right: 5px;
+	cursor: pointer;
+	border-radius: 50%;
+}
+.shared:hover{
+	opacity: 0.7;
+}
+.shared.gp {background-position: 0px 0px; background-color: #E62B34;}
+.shared.tt {background-position: 0px -30px; background-color: #43BDF0;}
+.shared.ce {background-position: 0px -60px; background-color: #8A898D;}
+.shared.wa {background-position: 0px -90px; background-color: #0dc143;}
+.shared.fb {background-position: 0px -120px; background-color: #6081C4;}
+
+.st2{
+   border-radius: 0;
+}
+.st3{
+   border-radius: 5px;
 }
