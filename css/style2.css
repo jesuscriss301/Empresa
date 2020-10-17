@@ -1,6 +1,6 @@
 *{
 	margin: 0;
-	padding: 0;
+	padding: inherit;
 }
 .cabecera{
 	border: 1.5px solid #F5B853;
@@ -27,38 +27,38 @@
 .botones{
 	display: flex;
 	justify-content: space-around;
-	width: 320px;
+	width: 420px;
 	list-style: none;
 }
 .bloque{
 	border: 1.5px solid #F5B853;
-	width: 80px;
 	display:flex;
 	align-items: center;
 	width: 100%;
-	display: block
-
-
+	display: block;
 }
 .letra1{
 	color:#424242;
 	text-decoration: none;
 	font-family: 'Pacico', cursive;
+	width:40%;
 }
 .letra2{
 	color:#424242;
 	width: 100px
 	text-decoration: none;
 	font-family: 'Pacico', cursive;
+	padding-left:20px;
 }
 .shared-panel{
 	overflow: auto;
+	align-items: center;
+	justify-content: space-around;
 }
 .shared-panel span{
 	margin: 10px 0;
 	font-size: 16px;
 	font-weight: 600;
-
 }
 .shared {
 	display: inline-block;
@@ -86,4 +86,26 @@
 }
 .st3{
    border-radius: 5px;
+}
+.column {
+  float: left;
+  padding: 10px;
+  /*height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.left {
+	width: 65%;
+}
+
+.right {
+  width: 35%;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.fondoN {
+	background-color:#000000;
 }
