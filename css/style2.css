@@ -23,6 +23,11 @@
 	display: flex;
 	width: 80px;
 }
+.imagen{
+		align-items: center;
+		display: flex;
+		width: 200px;
+}
 .foto{width: 100%}
 .botones{
 	display: flex;
@@ -49,6 +54,14 @@
 	text-decoration: none;
 	font-family: 'Pacico', cursive;
 	padding-left:20px;
+}
+.letra3{
+	color: #FECE1A;
+	margin-top:10px;
+	font-size:20px;
+	text-decoration: none;
+	font-family: 'Pacico', cursive;
+	width:110%;
 }
 .shared-panel{
 	overflow: auto;
