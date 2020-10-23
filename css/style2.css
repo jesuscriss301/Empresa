@@ -84,6 +84,13 @@
 	font-family: 'Pacico', cursive;
 	padding-left:20px;
 }
+.letra2 > Label{
+	color:#FECE1A;
+	width: 100px
+	text-decoration: none;
+	font-family: 'Pacico', cursive;
+	padding-left:20px;
+}
 .letra3{
 	color: #FECE1A;
 	margin-top:10px;
@@ -98,7 +105,7 @@
 	align-items: center;
 	justify-content: space-around;
 }
-.shared-panel span{
+.shared-panel > span{
 	margin: 10px 0;
 	font-size: 16px;
 	font-weight: 600;
