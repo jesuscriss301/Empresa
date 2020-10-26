@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/animate.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
+        <script src="js/jquery-3.2.1.min.js"></script>
     <meta charset="utf-8">
     <title>Empresa</title>
   </head>
@@ -40,7 +41,7 @@
           <div class="letra3">
             <h2>Gestión de información de la empresa</h2>  <br>
           </div>
-          <form class="inline-form" name="Empresa" method="POST" action="php/form.php" >
+          <form class="inline-form" id="Empresa" method="POST"  >
             <div class="form-group">
               <label for="exampleFormControlInput">Nombre</label>
               <input type="text" class="form-control newsletter" name="Nombre_Empresa" value="">
@@ -73,10 +74,31 @@
               <label for="exampleFormControlInput2">Url whatsapp</label>
               <input type="text" name="whatsapp" class="form-control" value="">
             </div>
-            <input class="button button-sp" type="submit" name="guardar_Empresa" value="submit" onclick="return getOutput();" ></input>
+            <button class="button button-sp" type="submit" id="guardar_Empresa"   ></button>
           </form>
         </div>
       </div>
+      <script type="text/javascript">
+  	$(document).ready(function(){
+  		$('#guardar_Empresa').click(function(){
+  			var datos=$('#Empresa').serialize();
+  			$.ajax({
+  				type:"POST",
+  				url:"php/form.php",
+  				data:datos,
+  				success:function(r){
+  					if(r==1){
+  						alert("agregado con exito");
+  					}else{
+  						alert("Fallo el server");
+  					}
+  				}
+  			});
+
+  			return false;
+  		});
+  	});
+  </script>
       <div class="bloque2" id="bloque_producto">
         <div class="toggleDiv row-fluid single-project bloque4 centrado letra2" id="Producto">
           <div class="letra3">
@@ -191,8 +213,9 @@
         </div>
       </div>
 
+
     </div>
-    <script type="text/javascript" src="js/forms.js" ></script>
+
     <script src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.mixitup.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>

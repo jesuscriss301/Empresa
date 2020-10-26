@@ -1,3 +1,9 @@
+<?php
+
+ $conexion=mysqli_connect('localhost:3307','root','','empresa_sql');
+ if(!$conexion) echo "error base de datos";
+
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -7,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/animate.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
+        <script src="js/jquery-3.2.1.min.js"></script>
     <meta charset="utf-8">
     <title>Empresa</title>
   </head>
@@ -40,43 +47,41 @@
           <div class="letra3">
             <h2>Gestión de información de la empresa</h2>  <br>
           </div>
-          <form class="inline-form" name="Empresa" method="POST" action="php/form.php" >
-            <div class="form-group">
+          <div class="form-group">
+          <form class="inline-form" id="Empresa" method="post" enctype="multipart/form-data"  >
+
               <label for="exampleFormControlInput">Nombre</label>
               <input type="text" class="form-control newsletter" name="Nombre_Empresa" value="">
-            </div>
-            <div class="form-group">
+
+
               <label for="exampleFormControlFile1">Inportar el logo</label>
-              <input type="file" class="form-control-file" name="logo">
-            </div>
-            <div class="form-group">
+              <input enctype="multipart/form-data" type="file" class="form-control-file" name="logo">
+
+
               <label for="exampleFormControlInput1">Correo</label>
               <input type="email" class="form-control" name="email" placeholder="name@example.com">
-            </div>
-            <div class="form-group">
+
               <label for="exampleFormControlInput1">Teléfono</label>
               <input type="text" class="form-control" name="telefono" placeholder="+xx xxxxxxxxxx">
-            </div>
-            <div class="form-group">
+
               <label for="exampleFormControlTextarea1">Quienes somos</label>
               <textarea class="form-control" name="quienes_somos" ></textarea>
-            </div>
-            <div class="form-group">
+
               <label for="exampleFormControlInput2">Url Facebook</label>
-              <input type="text" name="facebook" class="form-control"value="">
-            </div>
-            <div class="form-group">
+              <input type="text" name="facebook" class="form-control" >
+
               <label for="exampleFormControlInput2">Url Twitter</label>
-              <input type="text" name="twitter" class="form-control"value="">
-            </div>
-            <div class="form-group">
+              <input type="text" name="twitter" class="form-control" >
+
               <label for="exampleFormControlInput2">Url whatsapp</label>
-              <input type="text" name="whatsapp" class="form-control" value="">
-            </div>
-            <input class="button button-sp" type="submit" name="guardar_Empresa" value="submit" onclick="return getOutput();" ></input>
+              <input type="text" name="whatsapp" class="form-control" >
+
+            <button class="button button-sp" type="submit" name="guardar_Empresa"   > Guardar</button>
           </form>
         </div>
+        </div>
       </div>
+
       <div class="bloque2" id="bloque_producto">
         <div class="toggleDiv row-fluid single-project bloque4 centrado letra2" id="Producto">
           <div class="letra3">
@@ -190,9 +195,8 @@
           </form>
         </div>
       </div>
-
     </div>
-    <script type="text/javascript" src="js/forms.js" ></script>
+
     <script src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.mixitup.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -205,3 +209,20 @@
     <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
+<?php if(isset($_POST['guardar_Empresa'])){
+  $nombre=$_POST['Nombre_Empresa'];
+  $logo=$_POST['logo'];
+  $correo=$_POST['email'];
+  $telefono=$_POST['telefono'];
+  $quiens_somos=$_POST['quienes_somos'];
+  $url_fb=$_POST['facebook'];
+  $url_tw=$_POST['twitter'];
+  $url_wp=$_POST['whatsapp'];
+$sql="INSERT INTO INSERT INTO `empresa`(`id_empresa`, `nombre`, `quienessomos`, `logo`, `correo`, `telefono`, `facebook`, `twitter`, `whatsapp`)
+ VALUES ('','$nombre','$quiens_somos','$logo','$correo','$telefono','$url_fb','$url_tw','$url_wp')";
+$ejecutar= mysqli_query($conexion,$sql);
+if (!$ejecutar) {
+  echo "error linea sql";
+}
+
+} ?>
